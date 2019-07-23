@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        imgView = (ImageView)findViewById(R.id.img_input);
 
         try {
             prepareLanguageDir();
@@ -83,16 +84,19 @@ public class MainActivity extends AppCompatActivity {
                     return;
                 }
 
-//                Bitmap bitmap = (Bitmap) data.getExtras().get("data");
-//                imgView.setImageBitmap(bitmap);
+
 
                 try {
+
+                    Bitmap bitmap = (Bitmap) data.getExtras().get("data");
+                    imgView.setImageBitmap(bitmap);
                     m_tess.setImage((Bitmap) data.getExtras().get("data"));
 //                    m_tess.setImage(BitmapFactory.decodeResource(getResources(), R.drawable.cap));
                     String result = m_tess.getUTF8Text();
                     TextView resultView = (TextView) findViewById(R.id.txt_result);
                     resultView.setText(result);
                 } catch (Exception e) {
+                    e.printStackTrace();
                 }
 
             }
