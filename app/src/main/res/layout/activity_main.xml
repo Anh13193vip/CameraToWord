@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/img_input"
+        android:layout_width="match_parent"
+        android:layout_height="500dp" />
+
+    <Button
+        android:id="@+id/btn_rec"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="clickToTakePhoto"
+        android:text="Take Photo"
+        android:layout_below="@id/img_input"/>
+
+    <TextView
+        android:id="@+id/txt_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Your result is here..."
+        android:layout_below="@id/btn_rec"/>
+
+</LinearLayout>
